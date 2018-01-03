@@ -95,18 +95,13 @@ local separators = lain.util.separators
 -- brightness widget
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 
--- Binary clock
-local binclock = require("themes.powerarrow.binclock"){
-    height = 20,
-    show_seconds = true,
-    color_active = theme.fg_normal,
-    color_inactive = theme.bg_focus
-}
+-- Text clock
+local mytextclock = wibox.widget.textclock()
 
 -- Calendar
 theme.cal = lain.widget.calendar({
     --cal = "cal --color=always",
-    attach_to = { binclock.widget },
+    attach_to = { mytextclock },
     notification_preset = {
         font = "xos4 Terminus 10",
         fg   = theme.fg_normal,
@@ -276,7 +271,7 @@ function theme.at_screen_connect(s)
             arrow("#8DAA9A", "#777E76"),
             wibox.container.background(wibox.container.margin(brightness_widget, 1, 3), "#777E76"),
             arrow("#777E76", "#4B696D"),
-            wibox.container.background(wibox.container.margin(binclock.widget, 1, 1), "#4B696D"),
+            wibox.container.background(wibox.container.margin(mytextclock, 1, 1), "#4B696D"),
             arrow("#4B696D", "alpha"),
             --]]
             s.mylayoutbox,
