@@ -92,6 +92,9 @@ theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/
 local markup = lain.util.markup
 local separators = lain.util.separators
 
+-- brightness widget
+local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+
 -- Binary clock
 local binclock = require("themes.powerarrow.binclock"){
     height = 20,
@@ -271,8 +274,10 @@ function theme.at_screen_connect(s)
             arrow("#CB755B", "#8DAA9A"),
             wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 1, 1), "#8DAA9A"),
             arrow("#8DAA9A", "#777E76"),
-            wibox.container.background(wibox.container.margin(binclock.widget, 1, 1), "#777E76"),
-            arrow("#777E76", "alpha"),
+            wibox.container.background(wibox.container.margin(brightness_widget, 1, 3), "#777E76"),
+            arrow("#777E76", "#4B696D"),
+            wibox.container.background(wibox.container.margin(binclock.widget, 1, 1), "#4B696D"),
+            arrow("#4B696D", "alpha"),
             --]]
             s.mylayoutbox,
         },
