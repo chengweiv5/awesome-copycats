@@ -33,7 +33,7 @@ theme.titlebar_bg_normal                        = "#3F3F3F"
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
-theme.menu_height                               = 16
+theme.menu_height                               = 20
 theme.menu_width                                = 140
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
 theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
@@ -95,7 +95,7 @@ local separators = lain.util.separators
 
 -- Binary clock
 local binclock = require("themes.powerarrow.binclock"){
-    height = 16,
+    height = 20,
     show_seconds = true,
     color_active = theme.fg_normal,
     color_inactive = theme.bg_focus
@@ -214,7 +214,7 @@ function theme.powerline_rl(cr, width, height)
 end
 
 local function pl(widget, bgcolor, padding)
-    return wibox.container.background(wibox.container.margin(widget, 16, 16), bgcolor, theme.powerline_rl)
+    return wibox.container.background(wibox.container.margin(widget, 20, 20), bgcolor, theme.powerline_rl)
 end
 
 function theme.at_screen_connect(s)
@@ -248,7 +248,7 @@ function theme.at_screen_connect(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = 16, bg = theme.bg_normal, fg = theme.fg_normal })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 20, bg = theme.bg_normal, fg = theme.fg_normal })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
