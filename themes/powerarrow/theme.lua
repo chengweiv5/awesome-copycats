@@ -98,17 +98,6 @@ local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightne
 -- Text clock
 local mytextclock = wibox.widget.textclock()
 
--- Calendar
-theme.cal = lain.widget.calendar({
-    --cal = "cal --color=always",
-    attach_to = { mytextclock },
-    notification_preset = {
-        font = "xos4 Terminus 10",
-        fg   = theme.fg_normal,
-        bg   = theme.bg_normal
-    }
-})
-
 -- ALSA volume
 theme.volume = lain.widget.alsabar({
     --togglechannel = "IEC958,3",
